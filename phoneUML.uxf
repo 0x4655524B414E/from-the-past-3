@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>252</x>
+      <y>266</y>
+      <w>266</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>CordlessPhone
+--
+-string phoneNumber
+-string speedDialKeys
+-PersonalInfo phoneBook[]
+-int numberOfPersons
+--
++CordlessPhone(phoneNumber) &lt;&lt;constructor&gt;&gt;
++CordlessPhone(phoneNumber, phoneBook) &lt;&lt;constructor&gt;&gt;
++bool dial(string firstName, string LastName)
++bool dial(string phoneNumber)
++bool speedDial(int index)
++bool setSpeedDial(int index, string phoneNumber)
++bool sendSMS(string phoneNumber)
++bool sendSMS(string firstName, string lastName)
++bool add(PersonalInfo person)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>98</y>
+      <w>238</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>CallableByNamePhone {abstract}
+--
+--
+/+virtual bool dial(string firstName, string LastName)/
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>133</y>
+      <w>105</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>427</x>
+      <y>98</y>
+      <w>259</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>SMSSendablePhone {abstract}
+--
+--
+/+virtual bool sendSMS(string phoneNumber)/
+/+virtual bool sendSMS(string firstName, string lastName)/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>140</y>
+      <w>168</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>581</x>
+      <y>266</y>
+      <w>301</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>GsmPhone
+--
+-SIMCard simCard[]
+-string phoneNumber
+-string speedDialKeys
+--
++GsmPhone() &lt;&lt;constructor&gt;&gt;
++GsmPhone(SIMCard simCard1) &lt;&lt;constructor&gt;&gt;
++GsmPhone(SIMCard simCard1, SIMCard simCard2) &lt;&lt;constructor&gt;&gt;
++bool insertCard(SIMCard simCard1)
++bool insertCard(SIMCard simCard1, SIMCard simCard2)
++bool removeAllCards();
++bool dial(firstName, LastName)
++bool dial(phoneNumber)
++bool speedDial(index)
++bool setSpeedDial(index, phoneNumber)
++bool sendSMS(phoneNumber)
++bool sendSMS(firstName, lastName)
++bool sendMMS(phoneNumber)
++bool sendMMS(firstName, lastName)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>735</x>
+      <y>98</y>
+      <w>259</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>MMSSendablePhone {abstract}
+--
+--
+/+virtual bool sendMMS(string phoneNumber)/
+/+virtual bool sendMMS(string firstName, string lastName)/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>714</x>
+      <y>476</y>
+      <w>35</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>140</y>
+      <w>189</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>140</y>
+      <w>140</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>133</y>
+      <w>420</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;580.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1043</x>
+      <y>98</y>
+      <w>259</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Phone {abstract}
+--
+--
+/+virtual bool dial(string phoneNumber)/
+/+virtual bool speedDial(int index)/
+/+virtual bool setSpeedDial(int index, string phoneNumber)/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>931</x>
+      <y>266</y>
+      <w>231</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>FixedPhone
+--
+-string phoneNumber
+-string speedDialKeys
+--
++FixedPhone(string phoneNumber) &lt;&lt;constructor&gt;&gt;
++bool dial(string phoneNumber)
++bool speedDial(int index)
++bool setSpeedDial(int index, string phoneNumber)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1036</x>
+      <y>154</y>
+      <w>154</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>154</y>
+      <w>490</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>680.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>154</y>
+      <w>791</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1110.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>518</x>
+      <y>560</y>
+      <w>399</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>SIMCard
+--
+-string phoneNumber
+-PersonalInfo *persons[]
+-int numberOfPersons
+--
++SIMCard(string phoneNumber) &lt;&lt;constructor&gt;&gt;
++SIMCard(string phoneNumber, PersonalInfo book[], int numberOfPersons) &lt;&lt;constructor&gt;&gt;
++bool add(PersonalInfo person)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>602</x>
+      <y>749</y>
+      <w>224</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>PersonalInfo
+--
+-string firstName
+-string lastName
+-string homePhone
+-string businessPhone
+-string gsmPhone
+-string email
+--
++PersonalInfo(firstName, lastName, homePhone,
+businessPhone, gsmPhone, email) &lt;&lt;constructor&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>714</x>
+      <y>651</y>
+      <w>35</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>371</x>
+      <y>434</y>
+      <w>245</w>
+      <h>385</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;360.0;330.0;530.0</additional_attributes>
+  </element>
+</diagram>
